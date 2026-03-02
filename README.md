@@ -1,6 +1,13 @@
 # Early-Gameplay-Risk-Scoring
 Early Session Behavioral Risk Modeling Using Gameplay Telemetry Data
 
+## Project Highlights
+
+- Early-session risk scoring framework
+- Group-based validation to prevent leakage
+- Random Forest ROC AUC: 0.64
+- Captures 44% of incorrect cases by flagging 20% of sessions
+- Threshold optimization balances recall and intervention size
 
 ## Project Overview
 
