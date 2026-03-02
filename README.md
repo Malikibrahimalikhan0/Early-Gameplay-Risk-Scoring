@@ -1,2 +1,114 @@
 # Early-Gameplay-Risk-Scoring
 Early Session Behavioral Risk Modeling Using Gameplay Telemetry Data
+
+
+## Project Overview
+
+This project develops an early-session risk scoring framework to identify gameplay sessions that are more likely to result in incorrect outcomes.
+
+The core objective is to determine whether early behavioral signals (first 20 actions) contain meaningful predictive information that can support targeted intervention strategies.
+
+
+## Dataset
+
+**Source:** Kaggle – Predict Student Performance from Game Play  
+
+The dataset includes:
+- Question-level labels (`train_labels.csv`)
+- Session-level gameplay logs (`train.csv`)
+- Approximately 424,000 labeled question attempts
+
+> Note: The full dataset is not included in this repository due to size constraints.
+
+## Methodology
+
+### Feature Engineering
+
+Two categories of behavioral features were engineered:
+
+**1. Overall Session-Level Features**
+- Number of events  
+- Session duration  
+- Mean time between actions  
+- Long pause count  
+- Event diversity  
+- Pause ratio  
+
+**2. Early-Session Features (First 20 Actions)**
+- Early mean timing  
+- Early pause ratio  
+- Early timing volatility (`early_std_dt`)  
+- Early action diversity  
+
+### Modeling Approach
+
+- Logistic Regression (baseline)
+- Random Forest (nonlinear model)
+- Group-based train-test split to prevent session-level leakage
+- Evaluation using ROC AUC
+
+
+## Results
+
+| Model | ROC AUC |
+|-------|---------|
+| Logistic Regression | 0.61 |
+| Random Forest | 0.64 |
+
+### Risk Stratification
+
+- Top 20% highest-risk sessions contain ~44% of incorrect outcomes  
+- Threshold optimization captures ~55% of incorrect cases while flagging ~38% of sessions  
+
+Although overall predictive strength is moderate, the risk score effectively ranks sessions by difficulty and supports targeted intervention strategies.
+
+
+## Key Insights
+
+- Early behavioral instability (timing volatility and pauses) is predictive of incorrect outcomes.
+- Nonlinear modeling improves performance over linear baseline.
+- Preventing session-level leakage reduces inflated performance estimates.
+- Moderate AUC can still provide operational value when used for ranking and prioritization.
+
+
+## Limitations
+
+- 20% sampling of gameplay logs due to computational constraints  
+- Class imbalance (~14% incorrect sessions)  
+- Smaller sample sizes in later level groups  
+- Model performance is moderate and not production-ready  
+
+
+## How to Run
+
+1. Download the dataset from Kaggle  
+2. Update the `DATA_DIR` path inside the notebook  
+3. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+4. Run:
+
+```
+Early_Gameplay_Risk_Scoring.ipynb
+```
+
+
+## Repository Structure
+
+```
+Early-Gameplay-Risk-Scoring/
+│
+├── Early_Gameplay_Risk_Scoring.ipynb
+├── README.md
+├── requirements.txt
+├── figures/
+```
+
+
+## Author
+
+Malik Ibrahim Ali Khan  
+Master’s in Data Science – Regis University
