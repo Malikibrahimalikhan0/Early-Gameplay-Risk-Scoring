@@ -143,10 +143,12 @@ Early-Gameplay-Risk-Scoring/
 │ └── Early_Gameplay_Risk_Scoring.ipynb
 │
 ├── figures/
-│ ├── roc_comparison.png
-│ ├── rf_feature_importance.png
-│ ├── rf_risk_bucket_bar.png
-│ └── threshold_tradeoff.png
+│
+├── presentations/
+│ └── Final_Presentation.pptx
+│
+├── reports/
+│ └── Final_Report.pdf
 │
 ├── requirements.txt
 ├── README.md
