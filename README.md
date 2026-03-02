@@ -55,6 +55,21 @@ Two categories of behavioral features were engineered:
 | Logistic Regression | 0.61 |
 | Random Forest | 0.64 |
 
+## Visualizations
+
+### ROC Curve Comparison
+![ROC Curve](figures/roc_comparison.png)
+
+### Risk Bucket Performance
+![Risk Buckets](figures/rf_risk_bucket_bar.png)
+
+### Feature Importance
+![Feature Importance](figures/rf_feature_importance.png)
+
+### Threshold Tradeoff
+![Threshold Tradeoff](figures/threshold_tradeoff.png)
+
+
 ### Risk Stratification
 
 - Top 20% highest-risk sessions contain ~44% of incorrect outcomes  
