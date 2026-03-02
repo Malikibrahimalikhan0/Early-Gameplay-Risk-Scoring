@@ -27,6 +27,22 @@ The dataset includes:
 
 > Note: The full dataset is not included in this repository due to size constraints.
 
+### Dataset Access
+
+Due to Kaggle licensing and dataset size limitations, the raw dataset files are **not included** in this repository.
+
+To reproduce this project:
+
+1. Create a Kaggle account
+2. Visit the competition page:  
+   https://www.kaggle.com/competitions/predict-student-performance-from-game-play
+3. Download:
+   - `train.csv`
+   - `train_labels.csv`
+4. Place both files in the project root directory before running the notebook
+
+
+
 ## Methodology
 
 ### Feature Engineering
@@ -123,10 +139,18 @@ Early_Gameplay_Risk_Scoring.ipynb
 ```
 Early-Gameplay-Risk-Scoring/
 │
-├── Early_Gameplay_Risk_Scoring.ipynb
-├── README.md
-├── requirements.txt
+├── notebooks/
+│ └── Early_Gameplay_Risk_Scoring.ipynb
+│
 ├── figures/
+│ ├── roc_comparison.png
+│ ├── rf_feature_importance.png
+│ ├── rf_risk_bucket_bar.png
+│ └── threshold_tradeoff.png
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 
